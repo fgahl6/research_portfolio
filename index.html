@@ -65,13 +65,18 @@
       font-size: clamp(1.08rem, 2.2vw, 1.45rem);
     }
 
-    .hero-card {
+    .hero-card, .portfolio-note {
       margin: 34px 0 0;
       padding: 28px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(15,28,21,.92), rgba(22,40,30,.86));
       box-shadow: var(--shadow);
+    }
+
+    .portfolio-note {
+      margin-top: 20px;
+      background: rgba(255,255,255,.045);
     }
 
     blockquote {
@@ -137,6 +142,8 @@
     .published { background: rgba(49,196,111,.18); color: var(--green-soft); }
     .review { background: rgba(242,201,76,.16); color: #ffe08a; }
     .development { background: rgba(255,255,255,.09); color: var(--text); }
+    .returned { background: rgba(255,120,90,.16); color: #ffb199; }
+    .summary { background: rgba(255,255,255,.04); color: var(--muted); }
     .missing { background: rgba(255,255,255,.04); color: var(--muted); }
 
     .cards {
@@ -165,7 +172,7 @@
 
     @media (max-width: 700px) {
       header { padding-top: 44px; }
-      .hero-card { padding: 21px; }
+      .hero-card, .portfolio-note { padding: 21px; }
       blockquote { font-size: 1.05rem; padding: 18px; }
       .wrap { width: min(100% - 24px, 1160px); }
       table { min-width: 920px; }
@@ -262,6 +269,14 @@
         It is intended as a practical index for readers, reviewers, editors, and search engines.
       </p>
 
+      <div class="portfolio-note">
+        <strong>Portfolio Note:</strong>
+        This portfolio includes published papers, manuscripts under review, active research projects, editorial returns
+        that contributed to later work, and research summaries retained to document the conceptual development of the
+        overall research program. For several earlier projects, the complete working manuscripts are not reproduced here;
+        instead, brief research summaries have been preserved to show the evolution of the ideas.
+      </div>
+
       <div class="table-shell">
         <table>
           <thead>
@@ -315,9 +330,9 @@
             <tr>
               <td>16</td>
               <td class="title">Loss of External Evaluability</td>
-              <td class="small">Research page</td>
+              <td class="small">AI &amp; Society</td>
               <td>External evaluability, system opacity, and conditions of independent assessment.</td>
-              <td><span class="status development">Posted</span></td>
+              <td><span class="status returned">Editorial Return</span></td>
               <td><a href="16_loss_of_external_evaluability.html">Read HTML</a></td>
             </tr>
 
@@ -333,10 +348,10 @@
             <tr>
               <td>14</td>
               <td class="title">Uncertainty Limits of Explanation</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Uncertainty, explanation, interpretive limits, and knowledge conditions.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="14_uncertainty_limits_of_explanation.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="14_uncertainty_limits_of_explanation.html">Read Summary</a></td>
             </tr>
 
             <tr>
@@ -360,28 +375,28 @@
             <tr>
               <td>11</td>
               <td class="title">Verification as a Structural Property of AI Knowledge Systems</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Verification, structure, AI knowledge systems, and institutional reliability.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="11_verification_structural_property_ai_knowledge_systems.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="11_verification_structural_property_ai_knowledge_systems.html">Read Summary</a></td>
             </tr>
 
             <tr>
               <td>10</td>
               <td class="title">Verification in AI-Mediated Information Systems</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Verification, mediation, information systems, and conditions of trust.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="10_verification_in_ai_mediated_information_systems.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="10_verification_in_ai_mediated_information_systems.html">Read Summary</a></td>
             </tr>
 
             <tr>
               <td>09</td>
               <td class="title">Verification, Attribution, and Credibility</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Verification, attribution, credibility, provenance, and evaluative trust.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="09_verification_attribution_credibility.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="09_verification_attribution_credibility.html">Read Summary</a></td>
             </tr>
 
             <tr>
@@ -396,10 +411,10 @@
             <tr>
               <td>07</td>
               <td class="title">Verification Architecture of Institutions</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Institutional verification, architecture, reliability, and public legitimacy.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="07_verification_architecture_of_institutions.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="07_verification_architecture_of_institutions.html">Read Summary</a></td>
             </tr>
 
             <tr>
@@ -414,10 +429,10 @@
             <tr>
               <td>05</td>
               <td class="title">Monetary Credibility and Verification Architecture</td>
-              <td class="small">Research page</td>
+              <td class="small">Research portfolio</td>
               <td>Monetary credibility, verification architecture, institutional trust, and evaluation.</td>
-              <td><span class="status development">Posted</span></td>
-              <td><a href="05_monetary_credibility_verification_architecture.html">Read HTML</a></td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="05_monetary_credibility_verification_architecture.html">Read Summary</a></td>
             </tr>
 
             <tr>
@@ -454,7 +469,7 @@
   </main>
 
   <footer>
-    <div class="wrap">© Frank C. Gahl</div>
+    <div class="wrap">© 2026 Frank C. Gahl</div>
   </footer>
 </body>
 </html>
