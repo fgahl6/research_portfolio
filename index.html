@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOLARENAI Research | Frank C. Gahl</title>
-  <meta name="description" content="TOLARENAI Research portfolio of Frank C. Gahl exploring continuity, memory, accountability, verification, historical intelligibility, and AI-mediated knowledge systems." />
+
+  <title>Frank C. Gahl Research | TOLARENAI Research Branch</title>
+  <meta name="description" content="Research branch of the TOLARENAI project. Independent research by Frank C. Gahl on continuity, memory, accountability, verification, historical intelligibility, and AI-mediated knowledge systems." />
+
   <style>
     :root {
       --bg: #07110c;
@@ -12,7 +14,6 @@
       --panel-2: #16281e;
       --text: #edf5ef;
       --muted: #b9c9bd;
-      --green: #31c46f;
       --green-soft: #9be8b8;
       --gold: #f2c94c;
       --line: rgba(255,255,255,.14);
@@ -53,19 +54,19 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 6vw, 5.6rem);
+      font-size: clamp(2.8rem, 6vw, 5.9rem);
       line-height: .96;
       letter-spacing: -.045em;
     }
 
     .subtitle {
-      max-width: 860px;
+      max-width: 900px;
       margin-top: 22px;
       color: var(--muted);
       font-size: clamp(1.08rem, 2.2vw, 1.45rem);
     }
 
-    .hero-card, .portfolio-note {
+    .hero-card, .branch-card, .portfolio-note {
       margin: 34px 0 0;
       padding: 28px;
       border: 1px solid var(--line);
@@ -74,7 +75,7 @@
       box-shadow: var(--shadow);
     }
 
-    .portfolio-note {
+    .branch-card, .portfolio-note {
       margin-top: 20px;
       background: rgba(255,255,255,.045);
     }
@@ -89,6 +90,23 @@
       color: #fff7d7;
     }
 
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--green-soft);
+      font-weight: 700;
+    }
+
     main { padding: 44px 0 70px; }
     section { margin-top: 42px; }
 
@@ -98,7 +116,24 @@
       letter-spacing: -.025em;
     }
 
-    .note { color: var(--muted); max-width: 900px; }
+    .note { color: var(--muted); max-width: 930px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(22,40,30,.88), rgba(15,28,21,.88));
+    }
+
+    .card h3 { margin: 0 0 10px; color: #fff; }
+    .card p { margin: 0; color: var(--muted); }
 
     .table-shell {
       overflow-x: auto;
@@ -106,6 +141,7 @@
       border-radius: var(--radius);
       background: rgba(15,28,21,.8);
       box-shadow: var(--shadow);
+      margin-top: 22px;
     }
 
     table { width: 100%; border-collapse: collapse; min-width: 980px; }
@@ -146,23 +182,6 @@
     .summary { background: rgba(255,255,255,.04); color: var(--muted); }
     .missing { background: rgba(255,255,255,.04); color: var(--muted); }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(22,40,30,.88), rgba(15,28,21,.88));
-    }
-
-    .card h3 { margin: 0 0 10px; color: #fff; }
-    .card p { margin: 0; color: var(--muted); }
-
     footer {
       border-top: 1px solid var(--line);
       padding: 28px 0 46px;
@@ -172,7 +191,7 @@
 
     @media (max-width: 700px) {
       header { padding-top: 44px; }
-      .hero-card, .portfolio-note { padding: 21px; }
+      .hero-card, .branch-card, .portfolio-note { padding: 21px; }
       blockquote { font-size: 1.05rem; padding: 18px; }
       .wrap { width: min(100% - 24px, 1160px); }
       table { min-width: 920px; }
@@ -183,34 +202,62 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="eyebrow">TOLARENAI Research</div>
-      <h1>Research Portfolio</h1>
+      <div class="eyebrow">Frank C. Gahl</div>
+      <h1>Research</h1>
+
       <p class="subtitle">
-        Independent research by Frank C. Gahl on continuity, memory, accountability, verification,
+        Research portfolio and publications on continuity, memory, accountability, verification,
         historical intelligibility, and AI-mediated knowledge systems.
       </p>
 
       <div class="hero-card">
         <p>
-          This research portfolio documents an ongoing program of independent research examining how artificial intelligence,
-          digital infrastructures, and emerging informational systems are changing humanity's ability to preserve, evaluate,
-          reconstruct, and build upon accumulated knowledge.
+          This website serves as the research branch of the broader TOLARENAI project. It collects published papers,
+          manuscripts under review, active research projects, editorial returns that contributed to later work, and
+          archived research summaries documenting the development of an ongoing interdisciplinary research program.
         </p>
 
         <p>
-          The papers gathered here are not isolated articles. They form a connected research program concerned with a central
-          problem: how human societies can continue to verify, reconstruct, and build upon knowledge when the systems that
-          produce and circulate information become larger, faster, more automated, and more difficult to evaluate from outside.
+          Although each paper addresses a distinct problem, the work shares a common objective: understanding how societies
+          can preserve meaning, attribution, evaluability, and historical continuity as knowledge increasingly moves through
+          computational infrastructures.
         </p>
 
         <blockquote>
           How can societies preserve meaningful continuity as knowledge becomes increasingly mediated by computational systems?
         </blockquote>
+
+        <div class="button-row">
+          <a class="button" href="https://tolarenai.com/">Return to TOLARENAI</a>
+          <a class="button" href="#portfolio-index">View Portfolio Index</a>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="wrap">
+    <section>
+      <h2>About This Branch</h2>
+
+      <p>
+        This site is one branch of a distributed web of research, archives, essays, and continuity infrastructure created
+        by Frank C. Gahl. The research branch focuses on formal scholarly work: journal articles, manuscripts, research
+        summaries, and the conceptual development of an independent research program.
+      </p>
+
+      <p>
+        The larger TOLARENAI project explores AI-mediated society, continuity, public memory, attribution, and future
+        human-AI collaboration. This branch keeps the scholarly record focused and lightweight while remaining clearly
+        connected to the broader project.
+      </p>
+
+      <div class="branch-card">
+        <strong>Relationship to TOLARENAI:</strong>
+        The research presented here forms the scholarly branch of the broader TOLARENAI ecosystem. Other branches may
+        include Tolarport, AI economy materials, scrolls, quotation archives, public essays, and future continuity projects.
+      </div>
+    </section>
+
     <section>
       <h2>Research Program</h2>
 
@@ -262,8 +309,9 @@
       </div>
     </section>
 
-    <section>
+    <section id="portfolio-index">
       <h2>Portfolio Index</h2>
+
       <p class="note">
         The table below lists the research sequence from the most recent project back to the first published paper.
         It is intended as a practical index for readers, reviewers, editors, and search engines.
@@ -458,13 +506,16 @@
     </section>
 
     <section>
-      <h2>Research Philosophy</h2>
+      <h2>Branch Navigation</h2>
       <p>
-        These projects share a common assumption: civilizations are built not only through discovery, but through continuity.
-        What is remembered remains what future generations are able to build upon.
+        This research branch is designed to remain connected to the broader TOLARENAI ecosystem while keeping the scholarly
+        record organized as a focused, searchable, and lightweight site.
       </p>
 
-      <blockquote>The future needs a memory.</blockquote>
+      <div class="button-row">
+        <a class="button" href="https://tolarenai.com/">Return to TOLARENAI</a>
+        <a class="button" href="#portfolio-index">Back to Portfolio Index</a>
+      </div>
     </section>
   </main>
 
