@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Frank C. Gahl Research | TOLARENAI Research Branch</title>
+  <meta name="description" content="Research branch of the TOLARENAI project. Independent research by Frank C. Gahl on continuity, memory, accountability, verification, historical intelligibility, and AI-mediated knowledge systems." />
+
+  <style>
+    :root {
+      --bg: #07110c;
+      --panel: #0f1c15;
+      --panel-2: #16281e;
+      --text: #edf5ef;
+      --muted: #b9c9bd;
+      --green-soft: #9be8b8;
+      --gold: #f2c94c;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(49,196,111,.20), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(242,201,76,.12), transparent 32rem),
+        var(--bg);
+      line-height: 1.62;
+    }
+
+    a { color: var(--green-soft); text-decoration: none; }
+    a:hover { color: var(--gold); text-decoration: underline; }
+
+    .wrap { width: min(1160px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      padding: 64px 0 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .88rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 5.9rem);
+      line-height: .96;
+      letter-spacing: -.045em;
+    }
+
+    .subtitle {
+      max-width: 900px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2.2vw, 1.45rem);
+    }
+
+    .hero-card, .branch-card, .portfolio-note {
+      margin: 34px 0 0;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(15,28,21,.92), rgba(22,40,30,.86));
+      box-shadow: var(--shadow);
+    }
+
+    .branch-card, .portfolio-note {
+      margin-top: 20px;
+      background: rgba(255,255,255,.045);
+    }
+
+    blockquote {
+      margin: 24px 0 0;
+      padding: 22px 24px;
+      border-left: 5px solid var(--gold);
+      background: rgba(255,255,255,.045);
+      border-radius: 0 16px 16px 0;
+      font-size: 1.22rem;
+      color: #fff7d7;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--green-soft);
+      font-weight: 700;
+    }
+
+    main { padding: 44px 0 70px; }
+    section { margin-top: 42px; }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.65rem, 3vw, 2.3rem);
+      letter-spacing: -.025em;
+    }
+
+    .note { color: var(--muted); max-width: 930px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(22,40,30,.88), rgba(15,28,21,.88));
+    }
+
+    .card h3 { margin: 0 0 10px; color: #fff; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .table-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15,28,21,.8);
+      box-shadow: var(--shadow);
+      margin-top: 22px;
+    }
+
+    table { width: 100%; border-collapse: collapse; min-width: 980px; }
+
+    th, td {
+      padding: 16px 18px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      color: var(--gold);
+      font-size: .82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,.22);
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    td.title { font-weight: 700; color: #ffffff; }
+    .small { font-size: .92rem; color: var(--muted); }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 700;
+      white-space: nowrap;
+      border: 1px solid var(--line);
+    }
+
+    .published { background: rgba(49,196,111,.18); color: var(--green-soft); }
+    .review { background: rgba(242,201,76,.16); color: #ffe08a; }
+    .development { background: rgba(255,255,255,.09); color: var(--text); }
+    .returned { background: rgba(255,120,90,.16); color: #ffb199; }
+    .summary { background: rgba(255,255,255,.04); color: var(--muted); }
+    .missing { background: rgba(255,255,255,.04); color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 46px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 700px) {
+      header { padding-top: 44px; }
+      .hero-card, .branch-card, .portfolio-note { padding: 21px; }
+      blockquote { font-size: 1.05rem; padding: 18px; }
+      .wrap { width: min(100% - 24px, 1160px); }
+      table { min-width: 920px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Frank C. Gahl</div>
+      <h1>Research</h1>
+
+      <p class="subtitle">
+        Research portfolio and publications on continuity, memory, accountability, verification,
+        historical intelligibility, and AI-mediated knowledge systems.
+      </p>
+
+      <div class="hero-card">
+        <p>
+          This website serves as the research branch of the broader TOLARENAI project. It collects published papers,
+          manuscripts under review, active research projects, editorial returns that contributed to later work, and
+          archived research summaries documenting the development of an ongoing interdisciplinary research program.
+        </p>
+
+        <p>
+          Although each paper addresses a distinct problem, the work shares a common objective: understanding how societies
+          can preserve meaning, attribution, evaluability, and historical continuity as knowledge increasingly moves through
+          computational infrastructures.
+        </p>
+
+        <blockquote>
+          How can societies preserve meaningful continuity as knowledge becomes increasingly mediated by computational systems?
+        </blockquote>
+
+        <div class="button-row">
+          <a class="button" href="https://tolarenai.com/">Return to TOLARENAI</a>
+          <a class="button" href="#portfolio-index">View Portfolio Index</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>About This Branch</h2>
+
+      <p>
+        This site is one branch of a distributed web of research, archives, essays, and continuity infrastructure created
+        by Frank C. Gahl. The research branch focuses on formal scholarly work: journal articles, manuscripts, research
+        summaries, and the conceptual development of an independent research program.
+      </p>
+
+      <p>
+        The larger TOLARENAI project explores AI-mediated society, continuity, public memory, attribution, and future
+        human-AI collaboration. This branch keeps the scholarly record focused and lightweight while remaining clearly
+        connected to the broader project.
+      </p>
+
+      <div class="branch-card">
+        <strong>Relationship to TOLARENAI:</strong>
+        The research presented here forms the scholarly branch of the broader TOLARENAI ecosystem. Other branches may
+        include Tolarport, AI economy materials, scrolls, quotation archives, public essays, and future continuity projects.
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Program</h2>
+
+      <p>
+        This portfolio presents an evolving body of independent research by Frank C. Gahl on continuity, memory,
+        accountability, verification, historical intelligibility, and AI-mediated knowledge systems. The work examines
+        how societies preserve meaning, attribution, and evaluability as knowledge increasingly moves through computational
+        infrastructures.
+      </p>
+
+      <p>
+        Across this portfolio, several questions recur. How can attribution survive at AI scale? What makes knowledge
+        systems externally evaluable? How does synthetic mediation affect historical intelligibility? What forms of
+        witnessing, provenance, and preservation are needed when memory itself becomes computationally mediated?
+      </p>
+
+      <p>
+        The research moves across philosophy of history, social epistemology, AI ethics, media studies, finance,
+        institutional analysis, and historical theory. Its central concern is continuity: the conditions that allow
+        societies to remember, verify, revisit, and learn from what came before.
+      </p>
+
+      <blockquote>The future needs a memory.</blockquote>
+    </section>
+
+    <section>
+      <h2>Major Research Areas</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Continuity and Memory</h3>
+          <p>Research on how societies preserve traces, context, provenance, and interpretive pathways across time.</p>
+        </article>
+
+        <article class="card">
+          <h3>Attribution and Accountability</h3>
+          <p>Work examining how responsibility, source relationships, and institutional accountability can remain intelligible inside AI-scale systems.</p>
+        </article>
+
+        <article class="card">
+          <h3>Verification and Evaluability</h3>
+          <p>Papers exploring how claims, systems, institutions, and outputs remain capable of being assessed, challenged, reproduced, or independently evaluated.</p>
+        </article>
+
+        <article class="card">
+          <h3>Historical Intelligibility</h3>
+          <p>Research on how computational mediation changes the conditions under which societies reconstruct, interpret, and learn from the past.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio-index">
+      <h2>Portfolio Index</h2>
+
+      <p class="note">
+        The table below lists the research sequence from the most recent project back to the first published paper.
+        It is intended as a practical index for readers, reviewers, editors, and search engines.
+      </p>
+
+      <div class="portfolio-note">
+        <strong>Portfolio Note:</strong>
+        This portfolio includes published papers, manuscripts under review, active research projects, editorial returns
+        that contributed to later work, and research summaries retained to document the conceptual development of the
+        overall research program. For several earlier projects, the complete working manuscripts are not reproduced here;
+        instead, brief research summaries have been preserved to show the evolution of the ideas.
+      </div>
+
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Title</th>
+              <th>Journal / Venue</th>
+              <th>Focus</th>
+              <th>Status</th>
+              <th>Document</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>23</td>
+              <td class="title">The Retrieval Paradox Under Computational Mediation</td>
+              <td class="small">In development</td>
+              <td>Retrieval, access, interpretation, orientation, and historical understanding.</td>
+              <td><span class="status development">In development</span></td>
+              <td class="small">Not yet posted</td>
+            </tr>
+
+            <tr>
+              <td>22</td>
+              <td class="title">Distributed Witnessing as an Emerging Informational Condition: A Continuity Architecture for AI-Mediated Society</td>
+              <td>Discover Artificial Intelligence</td>
+              <td>Distributed witnessing, continuity architecture, society, and AI-mediated informational conditions.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="22_distributed_witnessing_continuity_architecture.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>21</td>
+              <td class="title">Evaluability in AI-Mediated Systems When Verification Costs More Than Persuasion</td>
+              <td>Discover Artificial Intelligence</td>
+              <td>Evaluability, verification costs, persuasion, and AI-mediated knowledge systems.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="21_evaluability_verification_costs_persuasion.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>20</td>
+              <td class="title">Historical Intelligibility Under Computational Mediation</td>
+              <td>History and Theory</td>
+              <td>Historical intelligibility, synthetic mediation, reconstruction, and interpretive continuity.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="20_historical_intelligibility_computational_mediation.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>16</td>
+              <td class="title">Loss of External Evaluability</td>
+              <td class="small">AI &amp; Society</td>
+              <td>External evaluability, system opacity, and conditions of independent assessment.</td>
+              <td><span class="status returned">Editorial Return</span></td>
+              <td><a href="16_loss_of_external_evaluability.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>15</td>
+              <td class="title">Systemic Risk and the Breakdown of Evaluation in AI-Mediated Knowledge Systems</td>
+              <td>New Media &amp; Society</td>
+              <td>Systemic risk, evaluation breakdown, knowledge systems, and public understanding.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="15_systemic_risk_breakdown_evaluation.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>14</td>
+              <td class="title">Uncertainty Limits of Explanation</td>
+              <td class="small">Research portfolio</td>
+              <td>Uncertainty, explanation, interpretive limits, and knowledge conditions.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="14_uncertainty_limits_of_explanation.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>13</td>
+              <td class="title">Verification as Preservation Infrastructure Under AI-Mediated Transformation</td>
+              <td>AI and Ethics</td>
+              <td>Verification, preservation infrastructure, ethics, and AI-mediated transformation.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="13_verification_preservation_infrastructure.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>12</td>
+              <td class="title">Missing / Not Used</td>
+              <td class="small">No current public file</td>
+              <td>Number absent from current research portfolio sequence.</td>
+              <td><span class="status missing">Missing</span></td>
+              <td class="small">No file</td>
+            </tr>
+
+            <tr>
+              <td>11</td>
+              <td class="title">Verification as a Structural Property of AI Knowledge Systems</td>
+              <td class="small">Research portfolio</td>
+              <td>Verification, structure, AI knowledge systems, and institutional reliability.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="11_verification_structural_property_ai_knowledge_systems.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>10</td>
+              <td class="title">Verification in AI-Mediated Information Systems</td>
+              <td class="small">Research portfolio</td>
+              <td>Verification, mediation, information systems, and conditions of trust.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="10_verification_in_ai_mediated_information_systems.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>09</td>
+              <td class="title">Verification, Attribution, and Credibility</td>
+              <td class="small">Research portfolio</td>
+              <td>Verification, attribution, credibility, provenance, and evaluative trust.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="09_verification_attribution_credibility.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>08</td>
+              <td class="title">Monetary Credibility and the Structure of Evaluation in Global Finance</td>
+              <td>Socio-Economic Review</td>
+              <td>Monetary credibility, institutional evaluation, global finance, and social trust.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="08_monetary_credibility_and_structure_of_evaluation.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>07</td>
+              <td class="title">Verification Architecture of Institutions</td>
+              <td class="small">Research portfolio</td>
+              <td>Institutional verification, architecture, reliability, and public legitimacy.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="07_verification_architecture_of_institutions.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>06</td>
+              <td class="title">Verification as an Epistemic Practice</td>
+              <td>Episteme</td>
+              <td>Verification, epistemic practice, knowledge validation, and social epistemology.</td>
+              <td><span class="status review">Awaiting reviews</span></td>
+              <td><a href="06_verification_as_an_epistemic_practice.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>05</td>
+              <td class="title">Monetary Credibility and Verification Architecture</td>
+              <td class="small">Research portfolio</td>
+              <td>Monetary credibility, verification architecture, institutional trust, and evaluation.</td>
+              <td><span class="status summary">Summary Archived</span></td>
+              <td><a href="05_monetary_credibility_verification_architecture.html">Read Summary</a></td>
+            </tr>
+
+            <tr>
+              <td>04</td>
+              <td class="title">Ethical Obligations of Provenance in AI-Scale Knowledge Systems</td>
+              <td>Ethics and Information Technology</td>
+              <td>Provenance, ethical obligation, AI-scale knowledge systems, and accountability.</td>
+              <td><span class="status review">Under review</span></td>
+              <td><a href="04_ethical_obligations_of_provenance.html">Read HTML</a></td>
+            </tr>
+
+            <tr>
+              <td>03</td>
+              <td class="title">Preserving Attribution and Accountability in AI-Scale Systems</td>
+              <td>Discover Artificial Intelligence</td>
+              <td>Attribution, accountability, memory, provenance, and AI-scale systems.</td>
+              <td><span class="status published">Published</span></td>
+              <td><a href="03_preserving_attribution_and_accountability.html">Read HTML</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Branch Navigation</h2>
+      <p>
+        This research branch is designed to remain connected to the broader TOLARENAI ecosystem while keeping the scholarly
+        record organized as a focused, searchable, and lightweight site.
+      </p>
+
+      <div class="button-row">
+        <a class="button" href="https://tolarenai.com/">Return to TOLARENAI</a>
+        <a class="button" href="#portfolio-index">Back to Portfolio Index</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Frank C. Gahl</div>
+  </footer>
+</body>
+</html>
